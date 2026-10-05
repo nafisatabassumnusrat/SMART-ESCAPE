@@ -1,0 +1,22 @@
+{
+  "building": "Algorithm Test 1",
+  "nodes": [
+    { "id": "R1", "label": "Room 1", "type": "room", "x": 100, "y": 200 },
+    { "id": "A", "label": "Node A", "type": "junction", "x": 200, "y": 100 },
+    { "id": "B", "label": "Node B", "type": "junction", "x": 200, "y": 300 },
+    { "id": "C", "label": "Node C", "type": "junction", "x": 300, "y": 300 },
+    { "id": "E1", "label": "Exit 1", "type": "exit", "x": 400, "y": 200 }
+  ],
+  "edges": [
+    { "id": "L1", "from": "R1", "to": "A", "cost": 2 },
+    { "id": "L2", "from": "A", "to": "E1", "cost": 20 },
+    { "id": "L3", "from": "R1", "to": "B", "cost": 3 },
+    { "id": "L4", "from": "B", "to": "C", "cost": 2 },
+    { "id": "L5", "from": "C", "to": "E1", "cost": 4 }
+  ],
+  "initial_state": {
+    "blocked_nodes": [],
+    "blocked_edges": [],
+    "closed_exits": []
+  }
+}
