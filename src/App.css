@@ -597,6 +597,79 @@ input:checked + .slider:before {
   color: var(--text-main);
 }
 
+/* Workspace Layout */
+.workspace {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+  overflow: hidden;
+  flex: 1;
+}
+
+.left-sidebar {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.right-sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.map-wrapper {
+  flex: 1;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+}
+
+.interaction-modes-panel {
+  display: flex;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  flex-wrap: nowrap; /* keep them in a row */
+}
+
+.interaction-modes-panel button {
+  white-space: nowrap;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   body {
@@ -606,57 +679,60 @@ input:checked + .slider:before {
     height: auto;
     min-height: 100vh;
   }
-  .workspace { 
-    flex-direction: column; 
-    overflow-y: visible;
-  }
+  
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-3);
     padding: var(--space-3);
   }
+  
   .header-controls {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
-  .reset-btn {
-    flex: 1;
-    justify-content: center;
+
+  .workspace { 
+    flex-direction: column; 
+    overflow-y: visible;
+    padding: 0.5rem;
   }
-  .sidebar { 
+  
+  .left-sidebar { 
     width: 100%; 
-    border-right: none; 
-    border-top: 1px solid var(--border);
+    order: 2; /* Put map first */
     overflow: visible;
-    order: 3;
   }
-  .map-container {
-    min-height: 350px;
-    height: auto;
+  
+  .main-content {
     order: 1;
-    padding: 0;
   }
-  .start-location-desktop {
-    display: none !important;
+  
+  .right-sidebar {
+    width: 100%;
+    order: 3;
+    overflow: visible;
   }
-  .start-location-mobile-panel {
-    display: block !important;
-    order: 2;
+
+  .status-bar {
+    padding: 0.5rem;
+    font-size: 0.8rem;
   }
+  
+  .status-bar span {
+    font-size: 0.75rem !important;
+  }
+
+  .map-wrapper {
+    min-height: 350px;
+    height: 400px; /* fixed height on mobile so it doesn't take up too much or too little */
+  }
+
+  /* Specific override for route-panel which was in original media query */
   .route-panel { 
     position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
     width: 100%;
-    min-width: 0;
-    margin-top: 0;
-    order: 3;
-    animation: none;
     box-shadow: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
+    border-radius: 8px;
   }
 }
