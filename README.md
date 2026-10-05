@@ -131,5 +131,5 @@ Edges represent the corridors connecting the nodes.
 ---
 
 <div align="center">
-  <p>Built for the BUP Hackathon. 🚀</p>
+  <p>Built for the DIU AI DEV FEST (UPAY & CPC). 🚀</p>
 </div>
