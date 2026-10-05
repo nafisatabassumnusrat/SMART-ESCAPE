@@ -89,7 +89,6 @@ function App() {
         </div>
         <div className="header-controls">
           <button style={{ background: 'var(--surface-hover)' }} onClick={() => dispatch({ type: 'SET_LANGUAGE', payload: state.language === 'en' ? 'bn' : 'en' })}>
-          <button style={{ background: 'var(--surface-hover)' }} onClick={() => dispatch({ type: 'SET_LANGUAGE', payload: state.language === 'en' ? 'bn' : 'en' })}>
             {t.language}
           </button>
         </div>
